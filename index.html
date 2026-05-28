@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desa Badamita — Kec. Rakit, Banjarnegara</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --h:#1f4a28;--hm:#2d6b3a;--hl:#3d9954;
+  --g:#f5f2eb;--gd:#e8e3d6;--gdd:#d4cebf;
+  --tan:#c4a85a;--tanl:#e8d08a;
+  --ink:#1a1f1b;--ink2:#3d4a3f;--ink3:#6b7a6d;
+  --w:#fdfcf8;
+  --r:0px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--w);color:var(--ink);
+  overflow-x:hidden;
+}
+
+/* ─── NAV ─── */
+#topnav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:64px;
+  background:rgba(253,252,248,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--gdd);
+  transition:all .3s;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:12px;
+  font-family:'Fraunces',serif;font-size:18px;font-weight:500;
+  color:var(--h);text-decoration:none;letter-spacing:-.3px;
+}
+.nav-emblem{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--h);display:flex;align-items:center;justify-content:center;
+  color:var(--tanl);font-size:16px;flex-shrink:0;
+}
+.nav-menu{display:flex;gap:4px;list-style:none;align-items:center}
+.nav-menu a{
+  padding:6px 14px;border-radius:4px;
+  font-size:13.5px;color:var(--ink2);text-decoration:none;
+  transition:.2s;white-space:nowrap;
+}
+.nav-menu a:hover{background:var(--gd);color:var(--h)}
+.nav-menu a.on{background:var(--h);color:#fff}
+.ham{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.ham span{display:block;width:22px;height:1.5px;background:var(--ink);transition:.3s}
+
+/* ─── PAGES ─── */
+.pg{display:none;padding-top:64px}
+.pg.on{display:block}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:calc(100vh - 64px);
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+}
+.hero-left{
+  padding:80px 60px 80px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--g);
+  position:relative;z-index:2;
+}
+.hero-kecil{
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:20px;display:flex;align-items:center;gap:8px;
+}
+.hero-kecil::before{content:'';width:32px;height:1px;background:var(--tan)}
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(44px,5vw,72px);
+  font-weight:300;line-height:1.08;
+  color:var(--h);margin-bottom:8px;
+  letter-spacing:-1px;
+}
+.hero h1 em{font-style:italic;color:var(--tan)}
+.hero-sub{
+  font-size:15px;color:var(--ink3);
+  margin:20px 0 36px;line-height:1.7;max-width:400px;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-dark{
+  background:var(--h);color:#fff;
+  padding:13px 28px;border-radius:3px;
+  font-size:13.5px;font-weight:500;letter-spacing:.2px;
+  border:none;cursor:pointer;text-decoration:none;
+  transition:.2s;display:inline-block;
+}
+.btn-dark:hover{background:var(--hm)}
+.btn-line{
+  background:transparent;color:var(--h);
+  padding:12px 26px;border-radius:3px;
+  border:1px solid var(--h);
+  font-size:13.5px;font-weight:500;
+  cursor:pointer;text-decoration:none;transition:.2s;display:inline-block;
+}
+.btn-line:hover{background:var(--g)}
+.hero-stats{
+  display:flex;gap:32px;margin-top:52px;
+  padding-top:32px;border-top:1px solid var(--gdd);
+  flex-wrap:wrap;
+}
+.hs-item{}
+.hs-num{
+  font-family:'Fraunces',serif;font-size:36px;font-weight:500;
+  color:var(--h);line-height:1;
+}
+.hs-lbl{font-size:11px;color:var(--ink3);letter-spacing:.5px;margin-top:4px;text-transform:uppercase}
+
+.hero-right{
+  /* FOTO */
+.hero-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+}
+/* OVERLAY AGAR TETAP SESUAI TEMA */
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(26,79,44,.45);
+}
+/* TICKER */
+.ticker{
+  background:var(--h);padding:10px 0;overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.t-wrap{display:flex;gap:0;align-items:center}
+.t-tag{
+  background:var(--tan);color:var(--h);
+  padding:2px 18px;font-size:11px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;white-space:nowrap;flex-shrink:0;
+}
+.t-scroll{
+  display:flex;white-space:nowrap;
+  animation:scroll 35s linear infinite;
+}
+.t-scroll span{
+  color:rgba(255,255,255,.75);font-size:13px;padding:0 40px;
+}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* BERITA */
+.beranda-berita{max-width:1160px;margin:80px auto;padding:0 40px}
+.sec-tag{
+  display:flex;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:16px;
+}
+.sec-tag::after{content:'';flex:1;height:1px;background:var(--gdd)}
+.sec-h{
+  font-family:'Fraunces',serif;font-size:clamp(28px,3vw,40px);
+  font-weight:300;color:var(--h);letter-spacing:-.5px;margin-bottom:40px;
+}
+.sec-h em{font-style:italic}
+.berita-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1px;background:var(--gdd)}
+.b-card{
+  background:var(--w);padding:28px;
+  transition:.2s;cursor:pointer;
+}
+.b-card:hover{background:var(--g)}
+.b-card.big{grid-row:span 2;padding:36px}
+.b-ikon{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;margin-bottom:20px;
+}
+.b-cat{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tan);font-weight:500;margin-bottom:10px}
+.b-judul{
+  font-family:'Fraunces',serif;font-weight:500;
+  line-height:1.35;color:var(--ink);margin-bottom:12px;
+}
+.b-card.big .b-judul{font-size:22px}
+.b-card:not(.big) .b-judul{font-size:16px}
+.b-tgl{font-size:12px;color:var(--ink3)}
+
+/* PAGE HEADER */
+.pgh{
+  background:var(--g);
+  padding:64px 40px 48px;
+  border-bottom:1px solid var(--gdd);
+}
+.pgh-inner{max-width:1160px;margin:0 auto}
+.pgh-kecil{
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:16px;
+}
+.pgh h2{
+  font-family:'Fraunces',serif;font-size:clamp(32px,4vw,52px);
+  font-weight:300;color:var(--h);letter-spacing:-.5px;line-height:1.1;
+}
+.pgh h2 em{font-style:italic}
+
+/* PROFIL */
+.profil-wrap{max-width:1160px;margin:0 auto;padding:60px 40px}
+.ptabs{display:flex;gap:0;border-bottom:1px solid var(--gdd);margin-bottom:48px;overflow-x:auto}
+.ptab{
+  padding:12px 24px;border:none;background:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink3);
+  border-bottom:2px solid transparent;margin-bottom:-1px;transition:.2s;white-space:nowrap;
+}
+.ptab.on{color:var(--h);border-bottom-color:var(--h);font-weight:500}
+.ptab-pane{display:none}
+.ptab-pane.on{display:block}
+
+.profil-2col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.info-blok{margin-bottom:36px}
+.info-blok h3{
+  font-family:'Fraunces',serif;font-size:22px;font-weight:500;
+  color:var(--h);margin-bottom:14px;letter-spacing:-.3px;
+}
+.info-blok p{font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:10px}
+.info-dl{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--gdd);border:1px solid var(--gdd);margin-top:20px;
+}
+.info-dd{
+  background:var(--w);padding:14px 16px;
+}
+.info-dd dt{font-size:11px;color:var(--ink3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
+.info-dd dd{font-size:14px;font-weight:500;color:var(--ink)}
+
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.vm-box{border:1px solid var(--gdd);padding:32px}
+.vm-box.dark{background:var(--h);border-color:var(--h)}
+.vm-label{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:16px;
+}
+.vm-box.dark .vm-label{color:rgba(255,255,255,.5)}
+.vm-box h3{
+  font-family:'Fraunces',serif;font-size:20px;font-weight:500;
+  color:var(--h);margin-bottom:16px;font-style:italic;line-height:1.4;
+}
+.vm-box.dark h3{color:var(--tanl)}
+.vm-box p,.vm-box li{font-size:14px;color:var(--ink2);line-height:1.8}
+.vm-box.dark p,.vm-box.dark li{color:rgba(255,255,255,.75)}
+.vm-box ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.vm-box li{padding-left:20px;position:relative}
+.vm-box li::before{content:'↗';position:absolute;left:0;color:var(--tan);font-size:12px;top:2px}
+
+.peta-box{border:1px solid var(--gdd);overflow:hidden}
+.peta-box iframe{width:100%;height:420px;display:block;border:none}
+
+/* STRUKTUR */
+.str-wrap{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+.str-tree{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.str-line{
+    width:2px;
+    height:35px;
+    background:#6c7a6e;
+}
+.str-row{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+}
+.str-card{
+    width:180px;
+    background:#fff;
+    border:1px solid #d8d1c6;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+    transition:.3s;
+}
+.str-card:hover{
+    transform:translateY(-5px);
+}
+.str-card img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid #315538;
+    margin-bottom:10px;
+}
+.str-nm{
+    font-size:14px;
+    font-weight:600;
+    color:#23442b;
+    margin-bottom:5px;
+}
+.str-role{
+    font-size:12px;
+    color:#666;
+}
+.str-title{
+    margin:40px 0 20px;
+    text-align:center;
+    font-size:13px;
+    letter-spacing:2px;
+    color:#315538;
+    text-transform:uppercase;
+}
+@media(max-width:768px){
+    .str-card{
+        width:150px;
+    }
+    .str-card img{
+        width:65px;
+        height:65px;
+    }
+}
+/* STATISTIK */
+.stat-wrap{max-width:1160px;margin:0 auto;padding:60px 40px}
+.stat-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gdd);border:1px solid var(--gdd);margin-bottom:48px}
+.s4-box{background:var(--w);padding:32px 24px;text-align:center}
+.s4-ikon{font-size:24px;margin-bottom:12px}
+.s4-num{
+  font-family:'Fraunces',serif;font-size:40px;font-weight:300;
+  color:var(--h);line-height:1;margin-bottom:6px;
+}
+.s4-lbl{font-size:12px;color:var(--ink3);letter-spacing:.5px;text-transform:uppercase}
+
+.chart-wrap{border:1px solid var(--gdd);padding:36px;margin-bottom:24px}
+.chart-ttl{
+  font-family:'Fraunces',serif;font-size:20px;font-weight:500;
+  color:var(--h);margin-bottom:28px;font-style:italic;
+}
+.bar-rows{display:flex;flex-direction:column;gap:14px}
+.br{display:flex;align-items:center;gap:16px}
+.br-lbl{min-width:140px;font-size:13px;color:var(--ink2);text-align:right}
+.br-track{flex:1;height:8px;background:var(--gd);position:relative;overflow:hidden}
+.br-fill{height:100%;border-radius:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.fill-h{background:var(--h)}
+.fill-t{background:var(--tan)}
+.fill-b{background:#4a7fa5}
+.br-val{font-size:12px;color:var(--ink3);min-width:36px}
+.stat-2col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+/* UMKM */
+.umkm-wrap{max-width:1160px;margin:0 auto;padding:60px 40px}
+.umkm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gdd);border:1px solid var(--gdd)}
+.uk-card{background:var(--w);padding:0;transition:.2s;cursor:default}
+.uk-card:hover{background:var(--g)}
+.uk-top{
+  padding:28px 28px 0;
+  border-bottom:1px solid var(--gdd);
+  padding-bottom:20px;
+}
+.uk-ikon{font-size:32px;margin-bottom:14px}
+.uk-cat{
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--tan);font-weight:500;margin-bottom:8px;
+}
+.uk-nm{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--h);margin-bottom:4px;letter-spacing:-.2px}
+.uk-own{font-size:12px;color:var(--ink3)}
+.uk-bot{padding:18px 28px}
+.uk-desc{font-size:13.5px;color:var(--ink2);line-height:1.7;margin-bottom:12px}
+.uk-tel{font-size:12px;color:var(--ink3)}
+.uk-tel i{margin-right:4px;color:var(--tan)}
+
+/* ═══ GALERI ═══ */
+
+.gal-wrap{
+  max-width:1160px;
+  margin:0 auto;
+  padding:60px 40px;
+}
+
+/* FILTER */
+.gal-filter{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.gf-btn{
+  padding:8px 18px;
+  border:1px solid #dcdcdc;
+  background:#fff;
+  font-size:13px;
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:.3s;
+  border-radius:3px;
+}
+
+.gf-btn:hover,
+.gf-btn.on{
+  background:#1d4f2b;
+  color:#fff;
+  border-color:#1d4f2b;
+}
+
+/* GRID */
+.gal-masonry{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+
+/* ITEM */
+.g-item{
+  height:250px;
+  background:#f1f1f1;
+  overflow:hidden;
+  position:relative;
+  border-radius:4px;
+}
+
+/* GAMBAR */
+.g-item img{
+  width:100%;
+  height:100%;
+  object-fit:contain; /* AGAR TIDAK TERCROP */
+  display:block;
+  transition:.4s;
+}
+
+/* HOVER */
+.g-item:hover img{
+  transform:scale(1.03);
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .gal-masonry{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media(max-width:768px){
+  .gal-masonry{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .g-item{
+    height:220px;
+  }
+}
+
+@media(max-width:500px){
+  .gal-masonry{
+    grid-template-columns:1fr;
+  }
+}
+/* KONTAK */
+.kt-wrap{max-width:1160px;margin:0 auto;padding:60px 40px}
+.kt-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:48px}
+.kt-info h3{
+  font-family:'Fraunces',serif;font-size:22px;font-weight:500;
+  color:var(--h);margin-bottom:24px;font-style:italic;
+}
+.kt-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+.kt-ic{
+  width:38px;height:38px;border:1px solid var(--gdd);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--h);font-size:14px;flex-shrink:0;
+}
+.kt-row dt{font-size:11px;color:var(--ink3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px}
+.kt-row dd{font-size:14px;font-weight:500;color:var(--ink)}
+.sosmed-row{display:flex;gap:8px;margin-top:28px;padding-top:24px;border-top:1px solid var(--gdd)}
+.sosmed-row a{
+  width:38px;height:38px;border:1px solid var(--gdd);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink3);font-size:14px;text-decoration:none;transition:.15s;
+}
+.sosmed-row a:hover{background:var(--h);color:#fff;border-color:var(--h)}
+
+.form-box{border:1px solid var(--gdd);padding:36px}
+.form-box h3{
+  font-family:'Fraunces',serif;font-size:22px;font-weight:500;
+  color:var(--h);margin-bottom:24px;font-style:italic;
+}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:12px;color:var(--ink2);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.fg input,.fg select,.fg textarea{
+  width:100%;padding:11px 14px;
+  border:1px solid var(--gdd);
+  border-radius:2px;
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  color:var(--ink);background:var(--w);outline:none;resize:vertical;
+  transition:.15s;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:var(--h);
+}
+.fg-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-kirim{
+  width:100%;padding:13px;background:var(--h);color:#fff;
+  border:none;border-radius:2px;font-size:14px;font-weight:500;
+  font-family:'DM Sans',sans-serif;cursor:pointer;letter-spacing:.5px;
+  transition:.15s;
+}
+.btn-kirim:hover{background:var(--hm)}
+.notif{
+  background:#ecf5ee;border:1px solid #b5d9be;color:#1f4a28;
+  padding:13px 16px;border-radius:2px;margin-bottom:16px;
+  font-size:14px;display:none;
+}
+
+/* FOOTER */
+footer{
+  background:var(--ink);color:rgba(255,255,255,.55);
+  padding:56px 40px 28px;
+}
+.ft-inner{max-width:1160px;margin:0 auto}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.ft-brand h3{
+  font-family:'Fraunces',serif;font-size:20px;font-weight:500;
+  color:#fff;margin-bottom:10px;letter-spacing:-.3px;
+}
+.ft-brand p{font-size:13px;line-height:1.8}
+.ft-col h4{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ft-col a{color:rgba(255,255,255,.5);text-decoration:none;font-size:13px;transition:.15s}
+.ft-col a:hover{color:var(--tanl)}
+.ft-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:20px;
+  display:flex;justify-content:space-between;font-size:12px;
+  flex-wrap:wrap;gap:8px;
+}
+
+/* ─── MODAL BERITA ─── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(20,30,22,.55);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:40px 20px 40px;
+  opacity:0;pointer-events:none;
+  transition:opacity .25s;
+  overflow-y:auto;
+}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{
+  background:var(--w);
+  width:100%;max-width:720px;
+  border-top:3px solid var(--h);
+  position:relative;
+  transform:translateY(24px);
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+  flex-shrink:0;
+}
+.modal-overlay.open .modal-box{transform:translateY(0)}
+.modal-header{
+  padding:32px 36px 24px;
+  border-bottom:1px solid var(--gdd);
+}
+.modal-cat{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--tan);font-weight:500;margin-bottom:10px;
+}
+.modal-judul{
+  font-family:'Fraunces',serif;font-size:clamp(22px,3vw,32px);
+  font-weight:500;color:var(--h);line-height:1.2;
+  letter-spacing:-.4px;margin-bottom:14px;
+}
+.modal-meta{
+  display:flex;gap:20px;font-size:12px;color:var(--ink3);
+  flex-wrap:wrap;
+}
+.modal-meta span{display:flex;align-items:center;gap:5px}
+.modal-ikon-wrap{
+  margin:0;
+  height:220px;display:flex;align-items:center;justify-content:center;
+  background:var(--g);border-bottom:1px solid var(--gdd);
+  font-size:72px;
+}
+.modal-body{
+  padding:32px 36px 40px;
+  font-size:15px;color:var(--ink2);line-height:1.85;
+}
+.modal-body p{margin-bottom:16px}
+.modal-body p:last-child{margin-bottom:0}
+.modal-close{
+  position:absolute;top:16px;right:16px;
+  width:36px;height:36px;border:1px solid var(--gdd);
+  background:var(--w);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:var(--ink3);transition:.15s;
+}
+.modal-close:hover{background:var(--g);color:var(--ink)}
+.b-card{cursor:pointer}
+.b-card:hover .b-judul{color:var(--h)}
+
+/* MOBILE */
+@media(max-width:900px){
+  #topnav{padding:0 20px}
+  .nav-menu{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--w);border-bottom:1px solid var(--gdd);padding:12px 20px;gap:2px}
+  .nav-menu.open{display:flex}
+  .ham{display:flex}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{min-height:280px}
+  .hero-left{padding:48px 24px}
+  .berita-grid{grid-template-columns:1fr;gap:1px}
+  .b-card.big{grid-row:auto}
+  .profil-2col,.vm-grid,.stat-2col{grid-template-columns:1fr}
+  .stat-4{grid-template-columns:1fr 1fr}
+  .umkm-grid{grid-template-columns:1fr}
+  .gal-masonry{grid-template-columns:1fr 1fr}
+  .g-item.wide,.g-item.tall{grid-column:auto;grid-row:auto}
+  .kt-grid,.ft-grid{grid-template-columns:1fr}
+  .str-row{gap:10px}
+  .pgh,.beranda-berita,.profil-wrap,.str-wrap,.stat-wrap,.umkm-wrap,.gal-wrap,.kt-wrap{padding-left:20px;padding-right:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="topnav">
+  <a class="nav-logo" href="#" onclick="show('beranda',this)">
+    <span>Desa Badamita</span>
+  </a>
+  <ul class="nav-menu" id="nm">
+    <li><a href="#" onclick="show('beranda',this)" class="on">Beranda</a></li>
+    <li><a href="#" onclick="show('profil',this)">Profil Desa</a></li>
+    <li><a href="#" onclick="show('struktur',this)">Struktur Organisasi</a></li>
+    <li><a href="#" onclick="show('statistik',this)">Statistik Penduduk</a></li>
+    <li><a href="#" onclick="show('umkm',this)">UMKM</a></li>
+    <li><a href="#" onclick="show('galeri',this)">Galeri</a></li>
+    <li><a href="#" onclick="show('kontak',this)">Kontak & Pengaduan</a></li>
+  </ul>
+  <button class="ham" onclick="document.getElementById('nm').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══ BERANDA ═══ -->
+<div class="pg on" id="beranda">
+
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-kecil">Website Desa</div>
+      <h1>Desa<br><em>Badamita</em></h1>
+      <p class="hero-sub">Kecamatan Rakit, Kabupaten Banjarnegara.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-dark" onclick="show('profil',null)">Profil Desa</a>
+        <a href="#" class="btn-line" onclick="show('kontak',null)">Pengaduan</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hs-item"><div class="hs-num">3.241</div><div class="hs-lbl">Jiwa</div></div>
+        <div class="hs-item"><div class="hs-num">1.087</div><div class="hs-lbl">KK</div></div>
+        <div class="hs-item"><div class="hs-num">16</div><div class="hs-lbl">RT</div></div>
+        <div class="hs-item"><div class="hs-num">4</div><div class="hs-lbl">RW</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right">
+      <img src="foto/badamita.jpg" alt="Desa Badamita" class="hero-img">
+      <div class="hero-overlay"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="t-wrap">
+      <div class="t-tag">Pengumuman</div>
+      <div style="overflow:hidden;flex:1">
+        <div class="t-scroll" id="tscroll">
+          <span>Pelayanan Kantor Desa Badamita Tutup Tgl. 27-28 Mei 2026 (Libur dan Cuti Idul Adha 1447 H),buka kembali Jum'at Tgl. 29 Mei 2026</span>
+          <span>Pelayanan administrasi kependudukan: Senin–Jumat pukul 08.00–16.00 WIB</span>
+          <span>Donor darah sukarela bersama PMI Banjarnegara — daftarkan diri Anda!</span>
+          <span>Pelayanan Kantor Desa Badamita Tutup Tgl. 27-28 Mei 2026 (Libur dan Cuti Idul Adha 1447 H),buka kembali Jum'at Tgl. 29 Mei 2026</span>
+          <span>Pelayanan administrasi kependudukan: Senin–Jumat pukul 08.00–16.00 WIB</span>
+          <span>Donor darah sukarela bersama PMI Banjarnegara — daftarkan diri Anda!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERITA -->
+  <div class="beranda-berita">
+    <div class="sec-tag">Terbaru</div>
+    <h2 class="sec-h">Berita &amp; <em>Kegiatan</em> Desa</h2>
+    <div class="berita-grid">
+      <div class="b-card big" onclick="bukaBerita(1)">
+        <div class="b-judul">Pentingnya Bijak Dalam Bermedia Sosial</div>
+        <div class="b-tgl">24 Mei 2026</div>
+      </div>
+      <div class="b-card" onclick="bukaBerita(2)">
+        <div class="b-judul">Pengumuman Libur Idul Adha 1447 H</div>
+        <div class="b-tgl">24 Mei 2026</div>
+      </div>
+      <div class="b-card" onclick="bukaBerita(3)">
+        <div class="b-judul">Pengumuman Libur Kenaikan Isa Al Masih</div>
+        <div class="b-tgl">24 Mei 2026</div>
+      </div>
+      <div class="b-card" onclick="bukaBerita(4)">
+        <div class="b-judul">Survey Perilaku Masyarakat</div>
+        <div class="b-tgl">24 Mei 2026</div>
+      </div>
+      <div class="b-card" onclick="bukaBerita(5)">
+        <div class="b-judul">Survey Kepuasan Masyarakat (SKM)</div>
+        <div class="b-tgl">24 Mei 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PROFIL ═══ -->
+<div class="pg" id="profil">
+  <div class="pgh">
+    <div class="pgh-inner">
+      <h2>Profil <em>Desa Badamita</em></h2>
+    </div>
+  </div>
+  <div class="profil-wrap">
+    <div class="ptabs">
+      <button class="ptab on" onclick="ptab('tentang',this)">Tentang Desa</button>
+      <button class="ptab" onclick="ptab('sejarah',this)">Sejarah</button>
+      <button class="ptab" onclick="ptab('visimisi',this)">Visi &amp; Misi</button>
+      <button class="ptab" onclick="ptab('peta',this)">Peta Wilayah</button>
+    </div>
+
+    <div class="ptab-pane on" id="pt-tentang">
+      <div class="profil-2col">
+        <div>
+          <div class="info-blok">
+            <h3>Gambaran Umum</h3>
+            <p>Desa Badamita terletak di Kecamatan Rakit, Kabupaten Banjarnegara, Provinsi Jawa Tengah. Desa ini berada di dataran rendah yang subur dengan sumber air yang melimpah dari Sungai Serayu.</p>
+            <p>Mayoritas penduduk bermata pencaharian sebagai petani dan pedagang. Desa Badamita terus berkembang dengan memanfaatkan teknologi informasi untuk meningkatkan kualitas pelayanan publik.</p>
+          </div>
+          <div class="info-dl">
+            <div class="info-dd"><dt>Nama Desa</dt><dd>Badamita</dd></div>
+            <div class="info-dd"><dt>Kecamatan</dt><dd>Rakit</dd></div>
+            <div class="info-dd"><dt>Kabupaten</dt><dd>Banjarnegara</dd></div>
+            <div class="info-dd"><dt>Provinsi</dt><dd>Jawa Tengah</dd></div>
+            <div class="info-dd"><dt>Kode Pos</dt><dd>53463</dd></div>
+            <div class="info-dd"><dt>Luas Wilayah</dt><dd>±4,5 km²</dd></div>
+            <div class="info-dd"><dt>Jumlah RW</dt><dd>4 RW</dd></div>
+            <div class="info-dd"><dt>Jumlah RT</dt><dd>16 RT</dd></div>
+          </div>
+        </div>
+        <div>
+          <div class="info-blok">
+            <h3>Potensi Desa</h3>
+            <p>Desa Badamita memiliki berbagai potensi yang terus dikembangkan untuk meningkatkan kesejahteraan masyarakat, meliputi sektor pertanian, perdagangan, kerajinan tangan, dan pariwisata lokal.</p>
+            <p>Lahan pertanian yang subur menghasilkan padi, jagung, singkong, dan berbagai palawija. Sektor UMKM juga tumbuh pesat dengan dukungan BUMDes dan program pemberdayaan ekonomi desa.</p>
+          </div>
+          <div class="info-dl">
+            <div class="info-dd"><dt>Penduduk</dt><dd>3.241 Jiwa</dd></div>
+            <div class="info-dd"><dt>KK</dt><dd>1.756 KK</dd></div>
+            <div class="info-dd"><dt>Laki-laki</dt><dd>2.742 Jiwa</dd></div>
+            <div class="info-dd"><dt>Perempuan</dt><dd>2.581 Jiwa</dd></div>
+            <div class="info-dd"><dt>Komoditas Utama</dt><dd>Padi, Jagung</dd></div>
+            <div class="info-dd"><dt>UMKM Aktif</dt><dd>45 Unit</dd></div>
+            <div class="info-dd"><dt>Sekolah</dt><dd>3 Unit</dd></div>
+            <div class="info-dd"><dt>Posyandu</dt><dd>8 Unit</dd></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ptab-pane" id="pt-sejarah">
+      <div class="info-blok" style="max-width:720px">
+        <h3>Sejarah Desa Badamita</h3>
+        <p>
+            Desa Badamita merupakan sebuah desa yang terletak di ujung barat laut Kabupaten Banjarnegara
+            yang secara geografis masuk dalam wilayah Kecamatan Rakit Kabupaten Banjarnegara dan
+            berbatasan langsung dengan Kabupaten Purbalingga. Desa Badamita memiliki luas kurang lebih
+            360 hektare dengan batas wilayah sebelah selatan berbatasan dengan Desa Kincang dan Desa
+            Tanjunganom, sebelah barat berbatasan dengan Desa Bandingan dan Desa Timbang Kecamatan
+            Kejobong Kabupaten Purbalingga, sebelah utara berbatasan dengan Desa Tribuana dan Desa
+            Sambong Kecamatan Punggelan, sedangkan sebelah timur berbatasan dengan Desa Lengkong.
+        </p>
+        <p>
+            Mayoritas penduduk Desa Badamita bermata pencaharian sebagai buruh tani dan peternak.
+            Selain dikenal sebagai wilayah agraris, Desa Badamita juga memiliki sejarah panjang yang
+            diwariskan secara turun-temurun oleh masyarakat setempat.
+        </p>
+        <p>
+            Cerita asal-usul berdirinya Desa Badamita sendiri berkaitan dengan kisah yang berkembang
+            sejak masa Kerajaan Majapahit. Kisah tersebut menjadi bagian dari warisan budaya dan
+            kearifan lokal yang masih dihormati oleh masyarakat hingga saat ini.
+        </p>
+
+        <h4>I. Kerajaan Majapahit</h4>
+        <p>
+            Cerita ini bermula pada masa Kerajaan Majapahit yang dipimpin oleh Raja Durga Meluh.
+            Dalam sebuah pertemuan agung kerajaan yang dihadiri Patih Sura Kecu, Ki Tunggal Seta,
+            para guru, dan para punggawa kerajaan, Raja mengungkapkan kegelisahannya terhadap
+            Tumenggung Citra Yuda yang menetap di wilayah Larangan.
+        </p>
+        <p>
+            Tumenggung Citra Yuda dikenal sebagai pemimpin yang sakti dan selalu memperoleh kemenangan
+            dalam setiap peperangan. Sebelumnya, Raja Durga Meluh telah memberikan tiga batang pohon
+            untuk ditanam di wilayah Tumenggungan sebagai simbol kemakmuran dan keindahan lingkungan.
+            Namun karena Tumenggung Citra Yuda tidak hadir dalam pertemuan agung kerajaan, Raja merasa
+            tersinggung dan mulai menyimpan rasa tidak suka.
+        </p>
+        <p>
+            Dalam pertemuan tersebut, Raja meminta pendapat kepada para guru dan punggawa mengenai
+            cara mengalahkan Tumenggung Citra Yuda. Ki Tunggal Seta kemudian menyarankan agar Raja
+            mempersunting adik perempuan Tumenggung Citra Yuda yang bernama Dewi Anjani. Melalui
+            pernikahan tersebut diharapkan Dewi Anjani dapat mengungkap rahasia kesaktian serta
+            kelemahan kakaknya.
+        </p>
+        <p>
+            Raja Durga Meluh menyetujui usulan tersebut dan memerintahkan Patih Sura Kecu untuk
+            melamar Dewi Anjani. Setelah perjalanan panjang melewati hutan dan berbagai rintangan,
+            Patih Sura Kecu berhasil membawa Dewi Anjani ke Majapahit.
+        </p>
+        <p>
+            Sebelum bertemu dengan Dewi Anjani, Raja kembali diingatkan oleh Ki Tunggal Seta mengenai
+            tujuan utama pernikahan tersebut. Dewi Anjani akhirnya mengungkapkan bahwa kelemahan
+            Tumenggung Citra Yuda terletak pada cinde atau selendang yang dijeratkan ke lehernya.
+        </p>
+        <p>
+            Pada saat pesta pernikahan Raja Durga Meluh dan Dewi Anjani berlangsung meriah dengan
+            berbagai pertunjukan tari, seluruh tamu ikut larut dalam suasana perayaan. Ketika
+            Tumenggung Citra Yuda lengah, Raja memerintahkan Patih Sura Kecu untuk menjalankan
+            rencana yang telah disiapkan. Selendang dijeratkan ke leher Tumenggung Citra Yuda hingga
+            menyebabkan kematiannya.
+        </p>
+        <p>
+            Kabar kematian Tumenggung Citra Yuda akhirnya sampai kepada adiknya, Setya Guna, yang
+            tinggal di Tumenggungan Sokaraja. Setya Guna segera berangkat menuju Majapahit untuk
+            memastikan kabar tersebut dan mencari makam kakaknya.
+        </p>
+        <p>
+            Setelah menemukan makam yang diyakini sebagai tempat peristirahatan Tumenggung Citra
+            Yuda, Setya Guna berniat memindahkan jasad kakaknya ke Tumenggungan Sokaraja. Namun
+            keberadaannya diketahui oleh warga yang mengira Tumenggung Citra Yuda hidup kembali
+            karena kemiripan wajah mereka.
+        </p>
+        <p>
+            Kabar tersebut segera menyebar ke seluruh wilayah Majapahit dan sampai ke telinga Raja
+            Durga Meluh. Raja yang terkejut kemudian memerintahkan seluruh pasukannya untuk mengejar
+            dan membinasakan sosok yang dianggap sebagai Tumenggung Citra Yuda yang bangkit kembali.
+        </p>
+        <p>
+            Dalam pelariannya, Setya Guna menyeberangi sungai saat hujan deras dan banjir besar
+            melanda. Banyak prajurit Majapahit yang tewas terseret banjir. Menurut cerita rakyat,
+            lokasi tersebut kemudian dikenal dengan nama Banjarnegara.
+        </p>
+        <p>
+            Pengejaran terus berlanjut melewati berbagai wilayah yang kemudian dipercaya menjadi asal
+            nama beberapa daerah seperti Banjarmangu, Wanadadi, Karangmangu, dan Paguan.
+        </p>
+        <p>
+            Setelah berhasil kembali ke Tumenggungan Larangan, Setya Guna mengumpulkan masyarakat
+            dan menceritakan kematian kakaknya. Sebagai bentuk penghormatan, masyarakat menguburkan
+            batang kayu yang digunakan sebagai ukuran makam Tumenggung Citra Yuda. Pada saat
+            pemakaman tersebut disiapkan bunga soka dan uang rini sehingga tempat tersebut kemudian
+            dikenal sebagai Sokarini.
+        </p>
+        <p>
+            Setelah wafatnya Tumenggung Citra Yuda, kepemimpinan Katumenggungan diteruskan oleh
+            Setya Guna. Meskipun demikian, pasukan Majapahit masih berjaga di sekitar wilayah
+            Tumenggungan dalam waktu yang cukup lama.
+        </p>
+        <p>
+            Akhirnya Patih Sura Kecu dan Ki Tunggal Seta memutuskan untuk menghentikan pengejaran
+            karena tidak membuahkan hasil. Mereka mengumumkan bahwa peperangan telah dihentikan
+            atau "Bada". Sebelum kembali ke Majapahit, para prajurit berpamitan atau "Pamita"
+            kepada masyarakat setempat.
+        </p>
+        <p>
+            Dari peristiwa tersebut lahirlah nama "Badapamita" yang kemudian mengalami perubahan
+            pengucapan menjadi "Badamita", nama yang digunakan hingga sekarang.
+        </p>
+
+        <h4>II. Katumenggungan Larangan</h4>
+        <p>
+            Tumenggung Citra Yuda memiliki seorang adik laki-laki bernama Setya Guna dan seorang
+            adik perempuan bernama Dewi Anjani. Menurut cerita rakyat yang berkembang di masyarakat,
+            Dewi Anjani merupakan ibunda dari Hanoman, tokoh kera putih dalam kisah pewayangan.
+        </p>
+        <p>
+            Hutan Larangan diyakini sebagai tempat Hanoman melakukan pertapaan. Di kawasan tersebut
+            terdapat dua sumur yang dikenal dengan nama Sumur Bandung. Sumur ini dipercaya memiliki
+            khasiat untuk menyembuhkan berbagai luka akibat peperangan maupun luka lainnya.
+        </p>
+        <p>
+            Konon, air dari Sumur Bandung menjadi salah satu rahasia mengapa pasukan Tumenggung
+            Citra Yuda selalu mampu memenangkan pertempuran. Prajurit yang terluka dapat pulih
+            kembali setelah menggunakan air dari sumur tersebut.
+        </p>
+        <p>
+            Hingga saat ini lokasi Sumur Bandung masih dikenal masyarakat dan berada di sebelah utara
+            Lapangan Desa Badamita. Walaupun yang tersisa hanya berupa penanda berupa batu dan pohon
+            beringin, tempat tersebut masih dianggap memiliki nilai sejarah dan budaya yang penting.
+        </p>
+
+        <h4>III. Asal Nama Dusun dan Kopak</h4>
+        <p>
+            Sebelum peristiwa pinangan Raja Durga Meluh kepada Dewi Anjani, Tumenggung Citra Yuda
+            menerima tiga batang pohon yang ditanam di sekitar wilayah Katumenggungan. Setelah
+            beberapa tahun berlalu, Tumenggung Citra Yuda bersama Setya Guna berkeliling untuk
+            meninjau perkembangan pohon-pohon tersebut.
+        </p>
+        <p>
+            Di wilayah sebelah barat, tanaman tumbuh subur sehingga daerah tersebut diberikan kepada
+            Setya Guna dan dinamakan Margayasa. Ketika melanjutkan perjalanan ke arah selatan,
+            Tumenggung Citra Yuda melihat pelangi yang indah dan mencium aroma harum sehingga
+            wilayah tersebut diberi nama Tejasari.
+        </p>
+        <p>
+            Aroma harum yang semakin kuat selama perjalanan kemudian melahirkan nama Gendani.
+            Sementara lokasi yang banyak ditumbuhi bunga diberi nama Kopak Kembang.
+        </p>
+        <p>
+            Karena bunga tersebut berasal dari pemberian Raja Durga Meluh, wilayah tersebut kemudian
+            dinamakan Sokaraja yang berarti bunga pemberian raja.
+        </p>
+        <p>
+            Selanjutnya muncul nama-nama wilayah lain seperti Sokabangsa, Sokawera, dan Kandangwesi
+            yang masing-masing memiliki cerita tersendiri berdasarkan perjalanan Tumenggung Citra
+            Yuda dan Setya Guna saat berkeliling wilayah Katumenggungan.
+        </p>
+        <h4>IV. Penutup</h4>
+        <p>
+            Terlepas dari benar atau tidaknya kisah tersebut secara historis, cerita asal-usul Desa
+            Badamita merupakan bagian dari warisan budaya yang telah hidup dan berkembang di tengah
+            masyarakat selama bergenerasi-generasi. Cerita ini menjadi simbol identitas, kearifan
+            lokal, serta penghormatan terhadap para leluhur yang telah membangun dan menjaga wilayah
+            Desa Badamita.
+        </p>
+        <p>
+            Sebagai generasi penerus, masyarakat Desa Badamita memiliki tanggung jawab untuk menjaga,
+            melestarikan, dan menghormati sejarah yang diwariskan secara turun-temurun agar tetap
+            dikenal oleh generasi mendatang.
+        </p>
+      </div>
+    </div>
+
+    <div class="ptab-pane" id="pt-visimisi">
+      <div class="vm-grid">
+        <div class="vm-box dark">
+          <div class="vm-label">Visi Desa</div>
+          <h3>“Menuju Badamita Sejahtera Berkemajuan Bermartabat”</h3>
+        </div>
+        <div class="vm-box">
+          <div class="vm-label">Misi Desa</div>
+          <ul>
+            <li>Meningkatkan pembangunan infrastruktur berbasis pengembangan ekonomi masyarakat.</li>
+            <li>Peningkatan kualitas SDM Masyarakat desa Badamita secara lahir dan batin.</li>
+            <li>Menciptakan pemerintahan yang bersih, berwibawa dan inovatif.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="ptab-pane" id="pt-peta">
+      <div class="info-blok">
+        <h3>Peta Lokasi Desa Badamita</h3>
+        <p style="margin-bottom:20px">Desa Badamita berada di Kecamatan Rakit, Kabupaten Banjarnegara, Provinsi Jawa Tengah. Dapat diakses melalui jalur Banjarnegara–Purbalingga.</p>
+      </div>
+      <div class="peta-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31652.589146180428!2d109.54253634585835!3d-7.401575099978819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6554c9cc6db7f1%3A0xdf5aa76a62f21000!2sBadamita%2C+Rakit%2C+Banjarnegara%2C+Central+Java!5e0!3m2!1sen!2sid!4v1461393567378" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STRUKTUR ═══ -->
+<div class="pg" id="struktur">
+
+    <div class="pgh">
+        <div class="pgh-inner">
+            <div class="pgh-kecil">
+                Beranda / Struktur Organisasi
+            </div>
+
+            <h2>
+                Struktur <em>Pemerintah Desa</em>
+            </h2>
+        </div>
+    </div>
+    <div class="str-wrap">
+        <!-- Kepala Desa -->
+        <div class="str-tree">
+            <div class="str-card">
+                <img src="foto/rahmatulloh.jpeg" alt="">
+                <div class="str-nm">Rahmatulloh</div>
+                <div class="str-role">Kepala Desa</div>
+            </div>
+            <div class="str-line"></div>
+            <!-- Sekdes -->
+            <div class="str-card">
+                <img src="foto/putihpolos.jpeg" alt="">
+                <div class="str-nm">Supi Hadi Prayitno, S.Pd</div>
+                <div class="str-role">Sekretaris Desa</div>
+            </div>
+            <div class="str-line"></div>
+            <!-- KASI & KAUR -->
+            <div class="str-row">
+                <div class="str-card">
+                    <img src="foto/laelawati.jpeg">
+                    <div class="str-nm">Laelawati, SE</div>
+                    <div class="str-role">Kepala Seksi TU & Umum</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/akhmadmukhodar.jpeg">
+                    <div class="str-nm">Akhmad Mukodar, S.Sos</div>
+                    <div class="str-role">Kepala Seksi Kesejahteraan</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/anita.jpeg">
+                    <div class="str-nm">Anita Dewi T, S.Ak</div>
+                    <div class="str-role">Kepala Seksi Pelayanan</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/toifah.jpeg">
+                    <div class="str-nm">Toifah, S.Sos</div>
+                    <div class="str-role">Kepala Urusan TU & Umum</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/isfiyanto.jpeg">
+                    <div class="str-nm">Isfiyanto, S.Sos</div>
+                    <div class="str-role">Kepala Urusan Keuangan</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/rahmawatieka.jpeg">
+                    <div class="str-nm">Rahmawati Eka S, S.Pd</div>
+                    <div class="str-role">Kepala Urusan Perencanaan</div>
+                </div>
+            </div>
+
+            <div class="str-title">
+                Staff dan Kepala Dusun
+            </div>
+            <!-- STAFF -->
+            <div class="str-row">
+                <div class="str-card">
+                    <img src="foto/tuhyono.jpeg">
+                    <div class="str-nm">Tuhyono</div>
+                    <div class="str-role">Staff Kasi Pemerintahan</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/putihpolos.jpeg">
+                    <div class="str-nm">Sutiyono</div>
+                    <div class="str-role">Staff Kasi Pelayanan</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/putihpolos.jpeg">
+                    <div class="str-nm">Admin Santosa</div>
+                    <div class="str-role">Staff Kaur TU & Umum</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/slametwardoyo.jpeg">
+                    <div class="str-nm">Slamet Wardoyo</div>
+                    <div class="str-role">Staff Kaur Keuangan</div>
+                </div>
+            </div>
+            <div class="str-title">
+                Kepala Dusun
+            </div>
+            <!-- KADUS -->
+            <div class="str-row">
+                <div class="str-card">
+                    <img src="foto/misyanti.jpeg">
+                    <div class="str-nm">Misyanti</div>
+                    <div class="str-role">Kepala Dusun I Badamita</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/tohiron.jpeg">
+                    <div class="str-nm">Tohiron, S.Sos</div>
+                    <div class="str-role">Kepala Dusun II</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/suratman.jpeg">
+                    <div class="str-nm">Suratman</div>
+                    <div class="str-role">Kepala Dusun III Paguan</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/bambangpurnomo.jpeg">
+                    <div class="str-nm">Bambang Purnomo</div>
+                    <div class="str-role">Kepala Dusun IV Sokaraja</div>
+                </div>
+                <div class="str-card">
+                    <img src="foto/rusmadi.jpeg">
+                    <div class="str-nm">Rusmadi</div>
+                    <div class="str-role">Kepala Dusun V Gendani</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ═══ STATISTIK ═══ -->
+<div class="pg" id="statistik">
+  <div class="pgh">
+    <div class="pgh-inner">
+      <div class="pgh-kecil">Beranda / Statistik Penduduk</div>
+      <h2>Data <em>Kependudukan</em></h2>
+    </div>
+  </div>
+  <div class="stat-wrap">
+    <div class="stat-4">
+      <div class="s4-box"><div class="s4-num">5.323</div><div class="s4-lbl">Total Penduduk</div></div>
+      <div class="s4-box"><div class="s4-num">2.742</div><div class="s4-lbl">Laki-laki</div></div>
+      <div class="s4-box"><div class="s4-num">2.581</div><div class="s4-lbl">Perempuan</div></div>
+      <div class="s4-box"><div class="s4-num">1.756</div><div class="s4-lbl">Kepala Keluarga</div></div>
+    </div>
+    <div class="stat-2col">
+      <div class="chart-wrap">
+        <div class="chart-ttl">Kelompok Usia</div>
+        <div class="bar-rows">
+          <div class="br"><div class="br-lbl">0–14 tahun</div><div class="br-track"><div class="br-fill fill-h" data-w="62" style="width:0%"></div></div><div class="br-val">62%</div></div>
+          <div class="br"><div class="br-lbl">15–29 tahun</div><div class="br-track"><div class="br-fill fill-t" data-w="48" style="width:0%"></div></div><div class="br-val">48%</div></div>
+          <div class="br"><div class="br-lbl">30–44 tahun</div><div class="br-track"><div class="br-fill fill-h" data-w="78" style="width:0%"></div></div><div class="br-val">78%</div></div>
+          <div class="br"><div class="br-lbl">45–59 tahun</div><div class="br-track"><div class="br-fill fill-b" data-w="55" style="width:0%"></div></div><div class="br-val">55%</div></div>
+          <div class="br"><div class="br-lbl">≥60 tahun</div><div class="br-track"><div class="br-fill fill-t" data-w="35" style="width:0%"></div></div><div class="br-val">35%</div></div>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-ttl">Tingkat Pendidikan</div>
+        <div class="bar-rows">
+          <div class="br"><div class="br-lbl">SD / Sederajat</div><div class="br-track"><div class="br-fill fill-h" data-w="70" style="width:0%"></div></div><div class="br-val">84%</div></div>
+          <div class="br"><div class="br-lbl">SMP / Sederajat</div><div class="br-track"><div class="br-fill fill-t" data-w="58" style="width:0%"></div></div><div class="br-val">50%</div></div>
+          <div class="br"><div class="br-lbl">SMA / Sederajat</div><div class="br-track"><div class="br-fill fill-h" data-w="45" style="width:0%"></div></div><div class="br-val">53%</div></div>
+          <div class="br"><div class="br-lbl">Diploma / S1</div><div class="br-track"><div class="br-fill fill-b" data-w="22" style="width:0%"></div></div><div class="br-val">6%</div></div>
+          <div class="br"><div class="br-lbl">S2 / S3</div><div class="br-track"><div class="br-fill fill-t" data-w="5" style="width:0%"></div></div><div class="br-val">5%</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="chart-wrap" style="margin-top:0">
+      <div class="chart-ttl">Mata Pencaharian</div>
+      <div class="bar-rows">
+        <div class="br"><div class="br-lbl">Pelajar/Mahasiswa</div><div class="br-track"><div class="br-fill fill-h" data-w="256" style="width:0,00%"></div></div><div class="br-val">4,82%</div></div>
+        <div class="br"><div class="br-lbl">Mengurus Rumah Tangga</div><div class="br-track"><div class="br-fill fill-t" data-w="240" style="width:0,00%"></div></div><div class="br-val">4,52%</div></div>
+        <div class="br"><div class="br-lbl">Belum/Tidak Bekerja</div><div class="br-track"><div class="br-fill fill-b" data-w="238" style="width:0,00%"></div></div><div class="br-val">4,48%</div></div>
+        <div class="br"><div class="br-lbl">Petani/Perkeunan</div><div class="br-track"><div class="br-fill fill-h" data-w="197" style="width:0,00%"></div></div><div class="br-val">3,71%</div></div>
+        <div class="br"><div class="br-lbl">Karyawan Swasta</div><div class="br-track"><div class="br-fill fill-t" data-w="151" style="width:0,00%"></div></div><div class="br-val">2,84%</div></div>
+        <div class="br"><div class="br-lbl">Wiraswasta</div><div class="br-track"><div class="br-fill fill-h" data-w="114" style="width:0,00%"></div></div><div class="br-val">2,15%</div></div>
+        <div class="br"><div class="br-lbl">Buruh Harian Lepas</div><div class="br-track"><div class="br-fill fill-t" data-w="37" style="width:0,00%"></div></div><div class="br-val">0,70%</div></div>
+        <div class="br"><div class="br-lbl">Pedagang</div><div class="br-track"><div class="br-fill fill-b" data-w="25" style="width:0,00%"></div></div><div class="br-val">0,47%</div></div>
+        <div class="br"><div class="br-lbl">Pensiunan</div><div class="br-track"><div class="br-fill fill-h" data-w="20" style="width:0,00%"></div></div><div class="br-val">0,38%</div></div>
+        <div class="br"><div class="br-lbl">PNS</div><div class="br-track"><div class="br-fill fill-t" data-w="14" style="width:0,00%"></div></div><div class="br-val">0,26%</div></div>
+        <div class="br"><div class="br-lbl">Perdagangan</div><div class="br-track"><div class="br-fill fill-h" data-w="11" style="width:0,00%"></div></div><div class="br-val">0,21%</div></div>
+        <div class="br"><div class="br-lbl">Sopir</div><div class="br-track"><div class="br-fill fill-t" data-w="6" style="width:0,00%"></div></div><div class="br-val">0,11%</div></div>
+        <div class="br"><div class="br-lbl">Karyawan Honorer</div><div class="br-track"><div class="br-fill fill-b" data-w="5" style="width:0,00%"></div></div><div class="br-val">0,09%</div></div>
+        <div class="br"><div class="br-lbl">Perangkat Desa</div><div class="br-track"><div class="br-fill fill-h" data-w="5" style="width:0,00%"></div></div><div class="br-val">0,009%</div></div>
+        <div class="br"><div class="br-lbl">Guru</div><div class="br-track"><div class="br-fill fill-t" data-w="4" style="width:0,00%"></div></div><div class="br-val">0,08%</div></div>
+        <div class="br"><div class="br-lbl">Petani</div><div class="br-track"><div class="br-fill fill-h" data-w="3" style="width:0,00%"></div></div><div class="br-val">0,06%</div></div>
+        <div class="br"><div class="br-lbl">TNI</div><div class="br-track"><div class="br-fill fill-t" data-w="3" style="width:0,00%"></div></div><div class="br-val">0,06%</div></div>
+        <div class="br"><div class="br-lbl">Peternak</div><div class="br-track"><div class="br-fill fill-b" data-w="2" style="width:0,00%"></div></div><div class="br-val">0,04%</div></div>
+        <div class="br"><div class="br-lbl">Tukang Kayu</div><div class="br-track"><div class="br-fill fill-h" data-w="2" style="width:0,00%"></div></div><div class="br-val">0,04%</div></div>
+        <div class="br"><div class="br-lbl">Transportasi</div><div class="br-track"><div class="br-fill fill-t" data-w="1" style="width:0,00%"></div></div><div class="br-val">0,02%</div></div>
+        <div class="br"><div class="br-lbl">Pengacara</div><div class="br-track"><div class="br-fill fill-h" data-w="1" style="width:0,00%"></div></div><div class="br-val">0,02%</div></div>
+        <div class="br"><div class="br-lbl">Konsultan</div><div class="br-track"><div class="br-fill fill-t" data-w="1" style="width:0,00%"></div></div><div class="br-val">0,02%</div></div>
+        <div class="br"><div class="br-lbl">Bidan</div><div class="br-track"><div class="br-fill fill-b" data-w="1" style="width:0,00%"></div></div><div class="br-val">0,02%</div></div>
+        <div class="br"><div class="br-lbl">Tukang Batu</div><div class="br-track"><div class="br-fill fill-h" data-w="1" style="width:0,00%"></div></div><div class="br-val">0,02%</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ UMKM ═══ -->
+<div class="pg" id="umkm">
+  <div class="pgh">
+    <div class="pgh-inner">
+      <div class="pgh-kecil">Beranda / UMKM</div>
+      <h2>Informasi <em>UMKM Desa</em></h2>
+    </div>
+  </div>
+  <div class="umkm-wrap">
+    <div class="umkm-grid">
+      <div class="uk-card">
+        <div class="uk-top">
+          <div class="uk-cat">Elektronik</div>
+          <div class="uk-nm">Putra Cell Badamita</div>
+          <div class="uk-own">Pemilik: Pak Sarwono</div>
+        </div>
+        <div class="uk-bot">
+          <div class="uk-desc">Penyedia jasa pengisian pulsa elektrik, paket data internet berbagai operator seluler, serta loket pembayaran tagihan rumah tangga (PPOB) seperti token listrik dan top-up saldo dompet digital. Di samping layanan instan tersebut, toko ini juga menyediakan stok fisik berupa perlengkapan pendukung perangkat elektronik portabel, seperti perangkat pengisi daya (charger), kabel transmisi data, dan pelindung layar handphone.</div>
+          <div class="uk-tel"><i class="fa fa-phone"></i> 0878-8032-0905</div>
+        </div>
+      </div>
+      <div class="uk-card">
+        <div class="uk-top">
+          <div class="uk-cat">Furniture</div>
+          <div class="uk-nm">Bintang Mebel Banjarnegara</div>
+          <div class="uk-own">Pemilik: Pak Setyo Hartono</div>
+        </div>
+        <div class="uk-bot">
+          <div class="uk-desc">Bintang Mebel Banjarnegara adalah sebuah unit usaha berbentuk toko fisik (berlokasi di Badamita, Rakit) yang bergerak di bidang perdagangan eceran dan pembuatan perabotan rumah tangga (furnitur).</div>
+          <div class="uk-tel"><i class="fa fa-phone"></i> 0812-2981-1237</div>
+        </div>
+      </div>
+      <div class="uk-card">
+        <div class="uk-top">
+          <div class="uk-cat">Toko Bangunan</div>
+          <div class="uk-nm">Tb Cahyana Badamita</div>
+        </div>
+        <div class="uk-bot">
+          <div class="uk-desc">TB Cahaya Badamita adalah sebuah unit usaha toko fisik yang bergerak di bidang perdagangan eceran bahan-bahan bangunan dan alat konstruksi rumah.</div>
+          <div class="uk-tel"><i class="fa fa-phone"></i> 0822-2684-2260</div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GALERI ═══ -->
+<div class="pg" id="galeri">
+  <div class="pgh">
+    <div class="pgh-inner">
+      <h2>Galeri <em>Desa Badamita</em></h2>
+    </div>
+  </div>
+
+  <div class="gal-wrap">
+
+    <!-- FILTER -->
+    <div class="gal-filter">
+      <button class="gf-btn on" onclick="gFilter('semua',this)">Semua</button>
+      <button class="gf-btn" onclick="gFilter('kegiatan',this)">Kegiatan</button>
+      <button class="gf-btn" onclick="gFilter('dokumentasi',this)">Dokumentasi Wawancara</button>
+    </div>
+
+    <!-- GRID GALERI -->
+    <div class="gal-masonry" id="galGrid">
+
+      <!-- KEGIATAN -->
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan1.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan2.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan3.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan4.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan5.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan6.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan7.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan8.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan9.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="kegiatan">
+        <img src="foto/kegiatan10.jpeg" alt="">
+      </div>
+
+      <!-- DOKUMENTASI -->
+      <div class="g-item" data-cat="dokumentasi">
+        <img src="foto/dokumentasi1.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="dokumentasi">
+        <img src="foto/dokumentasi2.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="dokumentasi">
+        <img src="foto/dokumentasi3.jpeg" alt="">
+      </div>
+
+      <div class="g-item" data-cat="dokumentasi">
+        <img src="foto/dokumentasi4.jpeg" alt="">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ KONTAK ═══ -->
+<div class="pg" id="kontak">
+  <div class="pgh">
+    <div class="pgh-inner">
+      <h2>Kontak &amp; <em>Pengaduan</em></h2>
+    </div>
+  </div>
+  <div class="kt-wrap">
+    <div class="kt-grid">
+      <div>
+        <div class="kt-info">
+          <h3>Hubungi Kami</h3>
+          <div class="kt-row">
+            <div class="kt-ic"><i class="fa fa-map-marker-alt"></i></div>
+            <dl><dt>Alamat</dt><dd>Jl. Raya Badamita-Kejobong RT.03/RW.03,<br>Rakit, Banjarnegara 53463</dd></dl>
+          </div>
+          <div class="kt-row">
+            <div class="kt-ic"><i class="fa fa-phone"></i></div>
+            <dl><dt>Telepon</dt><dd>+62 821-4514-0304</dd></dl>
+          </div>
+          <div class="kt-row">
+            <div class="kt-ic"><i class="fa fa-envelope"></i></div>
+            <dl><dt>Email</dt><dd>the.badamitas@gmail.com</dd></dl>
+          </div>
+          <div class="kt-row">
+            <div class="kt-ic"><i class="fa fa-clock"></i></div>
+            <dl><dt>Jam Pelayanan</dt><dd>Senin – Jumat, 08.00 – 16.00 WIB</dd></dl>
+          </div>
+          <div class="sosmed-row">
+            <a href="https://www.facebook.com/pemdes.badamita"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/pemdesbadamita"><i class="fab fa-instagram"></i></a>
+            <a href="www.youtube.com/@TheBadamitas"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/badamita_pemdes?s=20"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="form-box">
+        <h3>Kirim Pengaduan</h3>
+        <div class="notif" id="notif">✅ Pesan Anda berhasil terkirim. Kami akan menghubungi Anda segera.</div>
+        <div class="fg-2">
+          <div class="fg"><label>Nama Lengkap *</label><input type="text" id="fnama" placeholder="Nama Anda"></div>
+          <div class="fg"><label>Nomor HP *</label><input type="tel" id="fhp" placeholder="08xx-xxxx-xxxx"></div>
+        </div>
+        <div class="fg"><label>Email</label><input type="email" id="femail" placeholder="email@contoh.com"></div>
+        <div class="fg">
+          <label>Jenis Pengaduan *</label>
+          <select id="fjenis">
+            <option value="">-- Pilih Jenis --</option>
+            <option>Administrasi Kependudukan</option>
+            <option>Infrastruktur &amp; Jalan</option>
+            <option>Pelayanan Publik</option>
+            <option>Sosial &amp; Kemasyarakatan</option>
+            <option>UMKM &amp; Ekonomi</option>
+            <option>Keamanan &amp; Ketertiban</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+        <div class="fg"><label>Isi Pesan / Pengaduan *</label><textarea id="fpesan" rows="5" placeholder="Tuliskan pesan atau pengaduan Anda secara lengkap dan jelas..."></textarea></div>
+        <button class="btn-kirim" onclick="kirim()"><i class="fa fa-paper-plane" style="margin-right:8px"></i>Kirim Pesan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL BERITA ═══ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" onclick="tutupModal()"><i class="fa fa-times"></i></button>
+    <div class="modal-ikon-wrap" id="mIkon"></div>
+    <div class="modal-header">
+      <div class="modal-cat" id="mCat"></div>
+      <div class="modal-judul" id="mJudul"></div>
+      <div class="modal-meta">
+        <span><i class="fa fa-calendar"></i> <span id="mTgl"></span></span>
+        <span><i class="fa fa-user"></i> Admin Desa Badamita</span>
+        <span><i class="fa fa-eye"></i> <span id="mView"></span> tayangan</span>
+      </div>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <h3>Desa Badamita</h3>
+        <p>Website resmi Desa Badamita, Kecamatan Rakit, Kabupaten Banjarnegara, Jawa Tengah. Melayani dengan ikhlas untuk kesejahteraan bersama.</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 Dibuat oleh Salsabila Aurellia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── DATA BERITA ── */
+const BERITA = [
+  {
+    id:1,
+    foto : 'foto/logobanjarnegara.png',
+    judul:'PENTINGNYA BIJAK DALAM BERMEDIA SOSIAL',
+    tgl:'24 Mei 2026, 23:27:33 WIB',
+    view:125,
+    isi:`<p>
+  Bermedia sosial secara bijak berarti menggunakan platform digital dengan etika, bertanggung jawab, dan mematuhi hukum yang berlaku. Menghindari penyebaran hoaks, perundungan siber, dan menjaga privasi sangat penting untuk mencegah kerugian, baik bagi diri sendiri maupun orang lain.
+</p>
+<p>
+  Di Indonesia, perilaku melanggar etika di ranah digital dapat berujung pada sanksi pidana. Berikut adalah panduan dan ancaman pidana yang diatur dalam hukum:
+</p>
+<p>
+  <strong>1. Etika Dasar Bermedia Sosial</strong><br>
+  Praktik terbaik untuk menciptakan ruang digital yang aman meliputi:
+</p>
+<p>
+  • Berpikir sebelum mengunggah: Pastikan informasi valid dan tidak memancing emosi atau perpecahan.<br>
+  • Menjaga data pribadi: Hindari membagikan informasi sensitif milik sendiri atau orang lain tanpa izin.<br>
+  • Menghargai orang lain: Hindari penggunaan bahasa kasar, penghinaan, atau ujaran kebencian (hate speech).<br>
+  • Verifikasi informasi: Periksa kembali kebenaran berita sebelum membagikannya untuk mencegah penyebaran hoaks.
+</p>
+<p>
+  <strong>2. Ancaman Pidana Pelanggaran UU ITE</strong><br>
+  Ruang gerak di media sosial diatur ketat dalam Undang-Undang Informasi dan Transaksi Elektronik (UU ITE) dan perubahannya. Pelanggaran terhadap undang-undang ini dapat dikenakan sanksi serius:
+</p>
+<p>
+  • <strong>Penyebaran Berita Bohong (Hoaks):</strong> Menyebarkan berita bohong yang mengakibatkan kerugian konsumen dapat diancam pidana penjara paling lama 6 tahun dan/atau denda paling banyak Rp 1 miliar (Pasal 45A UU 19/2016).<br><br>
+  • <strong>Pencemaran Nama Baik:</strong> Mendistribusikan atau membuat informasi bermuatan penghinaan atau pencemaran nama baik dapat dipidana penjara paling lama 4 tahun dan/atau denda paling banyak Rp 750 juta (Pasal 45 ayat 3 UU 19/2016).<br><br>
+  • <strong>Ujaran Kebencian (SARA):</strong> Menyebarkan informasi yang ditujukan untuk menimbulkan rasa kebencian atau permusuhan individu dan/atau kelompok masyarakat tertentu berdasarkan SARA, diancam pidana penjara paling lama 6 tahun dan/atau denda paling banyak Rp 1 miliar (Pasal 28 ayat 2 jo. Pasal 45A ayat 2 UU 19/2016).<br><br>
+  • <strong>Ancaman Kekerasan:</strong> Mengirimkan informasi berisi ancaman kekerasan atau menakut-nakuti yang ditujukan secara pribadi, diancam pidana penjara paling lama 4 tahun dan/atau denda paling banyak Rp 750 juta (Pasal 29 jo. Pasal 45B UU 19/2016).
+</p>`
+  },
+  {
+    id:2,
+    judul:'PENGUMUMAN LIBUR IDUL ADHA 1447 H',
+    tgl:'24 Mei 2026, 22:19:14 WIB',
+    view:174,
+    isi:`<p>Disampaikan kepada seluruh warga Desa Badamita, Kantor Pelayanan Desa tutup pada tanggal 27-28 Mei 2026 dalam rangka Libur Idul Adha 1447 H & Cuti Bersama, pelayanan dibuka kembali tanggal 29 Mei 2026.</p>`
+  },
+  {
+    id:3,
+    judul:'PENGUMUMAN LIBUR KENAIKAN ISA AL MASIH',
+    tgl:'24 Mei 2026, 22:17:46 WIB',
+    view:132,
+    isi:`<p>Disampaikan kepada seluruh warga Desa Badamita, Kantor Pelayanan Desa tutup pada tanggal 14-15 Mei 2026 dalam rangka Libur Nasional Kenaikan Isa Al Masih & Cuti Bersama, pelayanan dibuka kembaki tanggal 18 Mei 2026.</p>`
+  },
+  {
+    id:4,
+    judul:'SURVEY PERILAKU MASYARAKAT',
+    tgl:'24 Mei 2026, 20:58:31 WIB',
+    view:98,
+    isi:`<p>Yth. Bapak/Ibu Responden warga Desa Badamita,</p>
+<p>Kami mengundang Bapak/Ibu untuk berpartisipasi dalam Survei Perilaku Anti Korupsi Masyarakat. Survei ini bertujuan untuk memperoleh gambaran mengenai perilaku dan pemahaman masyarakat Desa Badamita terkait budaya antikorupsi di lingkungan desa.</p>
+<p>Adapun aspek yang menjadi perhatian dalam survei ini meliputi:</p>
+<p>• Perilaku masyarakat terkait gratifikasi dan suap;<br>
+  • Pengetahuan, kesadaran, serta upaya menghindari konflik kepentingan;<br>
+  • Pemahaman dan implementasi 9 nilai antikorupsi dalam kehidupan sehari-hari.</p>
+<p>Kami berharap Bapak/Ibu dapat memberikan jawaban secara jujur, objektif, dan sesuai dengan kondisi maupun pengalaman yang benar-benar dirasakan. Setiap jawaban yang diberikan akan sangat bermanfaat sebagai bahan evaluasi dan penguatan budaya integritas serta pelayanan publik yang bersih dan transparan.</p>`
+  },
+  {
+    id:5,
+    judul:'SURVEY KEPUASAN MASYARAKAT (SKM)',
+    tgl:'24 Mei 2026, 20:53:38 WIB',
+    view:211,
+    isi:`<p>Yth. Bapak/Ibu Responden warga Desa Badamita,</p>
+<p>Kantor Desa Badamita mengundang Bapak/Ibu untuk berpartisipasi dalam kegiatan Survey Kepuasan Masyarakat (SKM) sebagai bagian dari upaya peningkatan kualitas pelayanan publik.</p>
+<p>Kami memohon kesediaan Bapak/Ibu untuk mengisi kuesioner secara jujur, objektif, dan sesuai dengan pengalaman pelayanan yang telah diterima. Setiap masukan dan penilaian yang diberikan sangat berarti sebagai bahan evaluasi dan perbaikan pelayanan di masa mendatang.</p>`
+  }
+];
+
+/* ── NAVIGASI ── */
+function show(id,el){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  document.querySelectorAll('.nav-menu a').forEach(a=>a.classList.remove('on'));
+  if(el) el.classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('nm').classList.remove('open');
+  if(id==='statistik') setTimeout(animBar,200);
+}
+function ptab(id,el){
+  document.querySelectorAll('.ptab-pane').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pt-'+id).classList.add('on');
+  el.classList.add('on');
+}
+function gFilter(cat,el){
+  document.querySelectorAll('.gf-btn').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  document.querySelectorAll('.g-item').forEach(i=>{
+    i.style.display=(cat==='semua'||i.dataset.cat===cat)?'':'none';
+  });
+}
+function animBar(){
+  document.querySelectorAll('.br-fill[data-w]').forEach(b=>{
+    b.style.width=b.dataset.w+'%';
+  });
+}
+function kirim(){
+  const n=document.getElementById('fnama').value.trim();
+  const h=document.getElementById('fhp').value.trim();
+  const j=document.getElementById('fjenis').value;
+  const p=document.getElementById('fpesan').value.trim();
+  if(!n||!h||!j||!p){alert('Mohon lengkapi semua field yang wajib diisi (*)');return;}
+  const notif=document.getElementById('notif');
+  notif.style.display='block';
+  ['fnama','fhp','femail','fpesan'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('fjenis').value='';
+  setTimeout(()=>notif.style.display='none',5000);
+}
+
+/* ── MODAL BERITA ── */
+function bukaBerita(id){
+  const b = BERITA.find(x=>x.id===id);
+  if(!b) return;
+  document.getElementById('mCat').textContent = b.cat;
+  document.getElementById('mJudul').textContent = b.judul;
+  document.getElementById('mTgl').textContent = b.tgl;
+  document.getElementById('mView').textContent = b.view;
+  document.getElementById('mBody').innerHTML = b.isi;
+  const ikon = document.getElementById('mIkon');
+  ikon.style.background = b.ikonBg;
+  ikon.textContent = b.ikon;
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.add('open');
+  overlay.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+function tutupModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModal(e){
+  if(e.target === document.getElementById('modalOverlay')) tutupModal();
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') tutupModal(); });
+</script>
+</body>
+</html>
